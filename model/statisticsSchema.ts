@@ -1,4 +1,5 @@
 const mong = require("mongoose");
+const propertiesUrl = require("./properties").DB_URL;
 
 const statSchema = new mong.Schema({
   name: {
@@ -11,5 +12,15 @@ const statSchema = new mong.Schema({
 });
 
 const statModel = mong.model("statistics", statSchema);
+
+mong.connect(propertiesUrl);
+// mongose;
+mong.connection.on("connected", (err: any) => {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log("connected to mongo db");
+  }
+});
 
 module.exports = statModel;
