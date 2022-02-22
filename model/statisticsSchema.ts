@@ -1,22 +1,13 @@
 const mong = require("mongoose");
 
-const statSchema = mong.Schema({
+const statSchema = new mong.Schema({
   name: {
-    require: true,
     type: String,
-  },
-  phNum: {
     require: true,
-    type: Number,
   },
-  time: {
-    require: true,
-    type: Date,
-  },
-  score: {
-    require: true,
-    type: Number,
-  },
+  phNum: { type: Number, require: true },
+  time: { type: Date, require: true },
+  score: { type: Number, require: true },
 });
 
 const statModel = mong.model("statistics", statSchema);
