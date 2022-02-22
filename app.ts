@@ -4,13 +4,14 @@ const cors = require("cors");
 const login = require("./routes/loginRoute");
 const prop = require("./model/properties");
 const mongoose = require("mongoose");
+const homeroute = require("./routes/homeRoute");
 // console.log(login);
 
 app.use(express.json());
 app.use(cors());
 
 app.use("/login", login);
-
+app.use("/", homeroute);
 app.listen(3001, () => {
   console.log("connected");
 });
@@ -19,5 +20,5 @@ console.log(prop, "propsssssss");
 mongoose.connect("mongodb://localhost:27017/quiz");
 
 mongoose.connection.on("connected", () => {
-  console.log("connected to mongo db");
+  console.log("connected to mongo db --------");
 });

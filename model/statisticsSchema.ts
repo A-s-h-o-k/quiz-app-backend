@@ -13,14 +13,4 @@ const statSchema = new mong.Schema({
 
 const statModel = mong.model("statistics", statSchema);
 
-mong.connect(propertiesUrl);
-// mongose;
-mong.connection.on("connected", (err: any) => {
-  if (err) {
-    console.log(err);
-  } else {
-    console.log("connected to mongo db");
-  }
-});
-
 module.exports = statModel;
