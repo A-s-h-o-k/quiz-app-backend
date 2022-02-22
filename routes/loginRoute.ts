@@ -7,12 +7,12 @@ router.post("/", async (req, res) => {
     if (err) console.log(err);
     else res.send({ nothing: "yess" });
   });
-  res.send({ nothing: "yess" });
+  // res.send({ nothing: "yess" });
 });
 
 router.get("/", async (req, res) => {
   console.log("--------");
-  statModels.find({ name: "shiva" }, function (err, re) {
+  statModels.find({ name: "ashok" }, function (err, re) {
     if (err) {
       console.log(err);
     } else {
