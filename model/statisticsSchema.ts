@@ -1,16 +1,14 @@
-const mong = require("mongoose");
+const mongo = require("mongoose");
 const propertiesUrl = require("./properties").DB_URL;
 
-const statSchema = new mong.Schema({
+const userSchema = new mongo.Schema({
   name: {
     type: String,
     require: true,
   },
-  phNum: { type: Number, require: true },
-  time: { type: Date, require: true },
-  score: { type: Number, require: true },
+  age:{type:Number}
 });
 
-const statModel = mong.model("statistics", statSchema);
+const statModel = mongo.model("data", userSchema);
 
-module.exports = statModel;
+module.exports = userModal;

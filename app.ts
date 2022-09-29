@@ -17,8 +17,12 @@ app.listen(3001, () => {
 });
 
 console.log(prop, "propsssssss");
-mongoose.connect("mongodb://localhost:27017/quiz");
+try {
 
+  mongoose.connect("mongodb+srv://firstproject11:quizapp11@quiz-app.anilknt.mongodb.net/?retryWrites=true&w=majority",{dbName:"myFirstDatabase"});
+} catch(e) {
+  console.log(e)
+}
 mongoose.connection.on("connected", () => {
   console.log("connected to mongo db --------");
 });

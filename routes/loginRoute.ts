@@ -1,25 +1,26 @@
 const router = require("express").Router();
-const statModels = require("../model/statisticsSchema.js");
+const userModal = require("../model/statisticsSchema.js");
 
-router.post("/", async (req, res) => {
+router.get("/", async (req, res) => {
   console.log(req.body);
-  statModels.find(function (err, response) {
+  userModal.find(function (err, response) {
     if (err) console.log(err);
-    else res.send({ nothing: "yess" });
+    else res.send(response);
   });
   // res.send({ nothing: "yess" });
 });
 
-router.get("/", async (req, res) => {
-  console.log("--------");
-  statModels.find({ name: "ashok" }, function (err, re) {
+router.post("/", async (req, res) => {
+  console.log("in login route--------");
+  const response = userModal.find({name:"Ashok"},function (err, re) {
     if (err) {
       console.log(err);
     } else {
       console.log(re, "=======");
-      res.send({ hai: 200 });
+      res.send(re);
     }
   });
+  console.log(response, "&&&&&&&&&&&&&&&")
 });
 
 module.exports = router;

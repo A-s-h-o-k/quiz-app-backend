@@ -1,5 +1,5 @@
 const properties = {
-  DB_URL: "mongodb://localhost:27017/quiz",
+  DB_URL: "mongodb+srv://quiz-app.anilknt.mongodb.net/myFirstDatabase",
 };
 
 module.exports = properties;
